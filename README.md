@@ -1,10 +1,8 @@
 # Translate-From-Clipboard
 Listen clipboard and translate words to Turkish.
 
-You must install eSpeak(http://espeak.sourceforge.net/) and necessary modules(requirements.txt)
+Just copy which word you want to learn. You will see meaning of word on a pop-up message :)
 
-![alt tag](http://i.hizliresim.com/kbJdk7.png)
+You must install necessary modules(requirements.txt)
 
-![alt tag](http://i.hizliresim.com/p09JgN.png)
-
-![alt tag](http://i.hizliresim.com/yEo1rM.png)
+![alt tag](http://i.hizliresim.com/ZZQ6YZ.png)

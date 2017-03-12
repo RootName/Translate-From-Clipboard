@@ -5,17 +5,23 @@
 
 __author__ = "Black Viking"
 __date__ = "10.03.2017"
-__version__ = 0
+__version__ = 1
 
 from translate import Translator
-import clipboard, sys, os
+import clipboard, sys, subprocess, os
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
 espeak = "espeak -v tr \""
 
-def main():
+def translate(type):
+	def sendResult(title, message, x):
+		if x == "1":
+			os.system("%s %s"%(espeak, message))
+		elif x == "2":
+			subprocess.call(["notify-send.exe", 'Ceviri: %s'%(title), '%s'%(message.replace("ı", "i").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ğ", "g"))])
+
 	translator = Translator(to_lang="tr")
 	f = open('history.txt', 'a')
 	clipboard.copy("")
@@ -29,14 +35,18 @@ def main():
 				f.write(result)
 				print result
 				clipboard.copy("")
-				os.system("%s %s"%(espeak, mean))
+				sendResult(word, mean, type)
 			else:
 				pass
 		except KeyboardInterrupt:
 			f.close()
 			print "\n[*] Detected CTRL+C, press Enter to continue..."
 			raw_input()
-			main()
+			translate(type)
+
+def main():
+	type = raw_input("[-] 1. Text To Speech\n[-] 2. Notification\n[-] --> ")
+	translate(type) if type > 3 else sys.exit()
 
 if __name__ == "__main__":
 	main()

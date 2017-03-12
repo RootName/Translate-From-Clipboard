@@ -5,7 +5,7 @@
 
 __author__ = "Black Viking"
 __date__ = "10.03.2017"
-__version__ = 1
+__version__ = 0
 
 from translate import Translator
 import clipboard, sys, subprocess, os
@@ -42,11 +42,11 @@ def translate(type):
 			f.close()
 			print "\n[*] Detected CTRL+C, press Enter to continue..."
 			raw_input()
-			translate(type)
+			main()
 
 def main():
 	type = raw_input("[-] 1. Text To Speech\n[-] 2. Notification\n[-] --> ")
-	translate(type) if type > 3 else sys.exit()
+	translate(type) if int(type) < 3 else sys.exit()
 
 if __name__ == "__main__":
 	main()

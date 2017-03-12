@@ -6,3 +6,5 @@ You must install eSpeak(http://espeak.sourceforge.net/) and necessary modules(re
 ![alt tag](http://i.hizliresim.com/kbJdk7.png)
 
 ![alt tag](http://i.hizliresim.com/p09JgN.png)
+
+![alt tag](http://i.hizliresim.com/yEo1rM.png)

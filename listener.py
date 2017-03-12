@@ -20,7 +20,7 @@ def translate(type):
 		if x == "1":
 			os.system("%s %s"%(espeak, message))
 		elif x == "2":
-			subprocess.call(["notify-send.exe", 'Ceviri: %s'%(title), '%s'%(message.replace("ı", "i").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ğ", "g"))])
+			subprocess.call(["notify-send.exe", 'Ceviri: %s'%(title), '%s'%(message.lower().replace("ı", "i").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ğ", "g"))])
 
 	translator = Translator(to_lang="tr")
 	f = open('history.txt', 'a')

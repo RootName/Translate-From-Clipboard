@@ -18,7 +18,7 @@ fileName = "/sdcard/history.txt"
 try:
 	from translate import Translator
 except ImportError:
-	print "[-] Çeviri için gerekli olan 'translate' modülü bulunamadı"!
+	print "[-] Çeviri için gerekli olan 'translate' modülü bulunamadı!"
 	if raw_input("[?] Yüklensin mi? [Y/n] ==> ").lower() == "y"
 		module()
 	else:

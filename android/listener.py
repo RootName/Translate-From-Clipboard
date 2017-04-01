@@ -56,6 +56,7 @@ def main():
             mean = translate(word)
             if mean:
                 result = "[>] %s : %s"%(word, mean)
+                droid.makeToast(result)
                 print result
                 if f == False:
                     pass
